@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:signe_malo/utils/utils.dart';
 import 'package:signe_malo/view_model/camera.view_model.dart';
+import 'package:signe_malo/view_model/poses.view_model.dart';
 
 import 'views/screens/splash_screen.dart';
 
@@ -16,7 +17,9 @@ class AppRoot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => CameraViewModel())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => CameraViewModel()),
+        ChangeNotifierProvider(create: (_) => PosesViewModel())],
       child: MaterialApp(
         title: "Sign Malo",
         home: const SplashScreen(),

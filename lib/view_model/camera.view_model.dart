@@ -1,5 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
+import 'package:google_mlkit_pose_detection/google_mlkit_pose_detection.dart';
 import 'package:signe_malo/models/controller/camera_controller.dart';
 
 class CameraViewModel with ChangeNotifier {
@@ -30,4 +32,13 @@ class CameraViewModel with ChangeNotifier {
     _currentDuration = duration;
     notifyListeners();
   }
+
+  InputImage? getInputImageFromCamera(
+          {required CameraImage cameraImage,
+          required CameraDescription cam,
+          required DeviceOrientation currentOrientation}) =>
+      CamController.getImageFromCameraImage(
+          cameraImage: cameraImage,
+          cam: cam,
+          currentOrientation: currentOrientation);
 }
