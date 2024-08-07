@@ -28,9 +28,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [],
+    return const Scaffold(
+      body: Center(
+        child: LinearProgressIndicator(),
       ),
     );
   }
